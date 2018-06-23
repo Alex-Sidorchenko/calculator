@@ -1,46 +1,35 @@
-function plus() {
+btn1.onclick = function() {
     document.getElementById('inp').value+='+';
+    document.getElementById('inp').focus();
 }
 
-function minus() {
+btn2.onclick = function() {
     document.getElementById('inp').value+='-';
+    document.getElementById('inp').focus();
 }
 
-function multiply() {
-    document.getElementById('inp').value+='x';
+btn3.onclick = function() {
+    document.getElementById('inp').value+='*';
+    document.getElementById('inp').focus();
 }
 
-function divide() {
-    document.getElementById('inp').value+='÷';
+btn4.onclick = function() {
+    document.getElementById('inp').value+='/';
+    document.getElementById('inp').focus();
 }
 
-function exp() {
+btn5.onclick = function() {
     document.getElementById('inp').value+='^';
+    document.getElementById('inp').focus();
 }
 
-function root() {
+btn6.onclick = function() {
     document.getElementById('inp').value+='√';
+    document.getElementById('inp').focus();
 }
 
-function result() {}
-
-document.getElementsByTagName('input')[0].onkeypress = function(e) {
-    e = e || event;
-    if (e.ctrlKey || e.altKey || e.metaKey) return;
-    var chr = getChar(e);
-    if (chr == null) return;
-    if (chr < '0' || chr > '9') {
-      return false;
-    }
-  }
-  function getChar(event) {
-    if (event.which == null) {
-      if (event.keyCode < 32) return null;
-      return String.fromCharCode(event.keyCode) // IE
-    }
-    if (event.which != 0 && event.charCode != 0) {
-      if (event.which < 32) return null;
-      return String.fromCharCode(event.which) // остальные
-    }
-    return null; // специальная клавиша
-  }
+btn7.onclick = function() {
+    var result = document.getElementById('inp').value;
+    document.getElementById('inp').value = eval(result);
+    document.getElementById('inp').focus();
+}

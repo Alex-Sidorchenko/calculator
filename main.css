@@ -24,5 +24,6 @@
 }
 
 body{
-    background-color: powderblue;
+    background: powderblue;
+    background: linear-gradient(to right, powderblue, turquoise);
 } 
